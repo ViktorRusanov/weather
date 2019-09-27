@@ -1,0 +1,27 @@
+@import 'styles';
+
+.row-widget {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $row-border;
+    background-image: url("http://smolko.ru/wp-content/uploads/2015/04/pochemy-nebo-goluboe.jpg");
+    background-size: cover;
+    height: 400px;
+}
+
+.column-widget {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+@include respond-to(xs) {
+    .row-widget {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .column-widget {
+        width: 100%;
+    }
+}

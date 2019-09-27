@@ -1,0 +1,1 @@
+export {FavouriteModule} from './FavouriteModule';

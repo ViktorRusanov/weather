@@ -1,0 +1,23 @@
+@import 'styles';
+
+.row-search {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $row-border;
+    background-color: $bg-search-color;
+}
+
+.column-search, .column-favourite {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+@include respond-to(xs) {
+    .row-search {
+        flex-direction: column;
+    }
+    .column-search, .column-favourite {
+        width: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+@import 'styles';
+
+.favorite-form {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+
+  &__button {
+    background-color: $bg-button-color;
+    border: none;
+    color: $button-color;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+
+    &--hover:hover {
+      background-color: $bg-button-color-hover;
+    }
+  }
+}
+
+.favorite-form-info {
+  &__header {
+    font: 30px/30px 'Open Sans', Arial, sans-serif;
+    margin: 0 0 0 10px;
+  }
+
+  &__text {
+    font: 20px/20px 'Open Sans', Arial, sans-serif;
+    color: $info-text-color;
+    margin: 0 0 0 10px;
+  }
+}
+
+@include respond-to(xs) {
+  .favorite-form {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+
+    &__button {
+      width: 250px;
+      margin: 10px 0 20px 0;
+    }
+  }
+
+  .favorite-form-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    &__header {
+      font-size: large;
+      margin-top: 10px;
+    }
+
+    &__text {
+      font-size: small;
+    }
+  }
+}

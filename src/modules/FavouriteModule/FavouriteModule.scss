@@ -1,0 +1,8 @@
+@import 'styles';
+
+.row-favourite {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $row-border;
+    background-color: $bg-favourites-color;
+}

@@ -1,0 +1,11 @@
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+}
+

@@ -1,0 +1,51 @@
+@import 'styles';
+
+.widget-forecast {
+  width: 600px;
+  height: 300px;
+  color: $widget-forecast-color;
+  background: $widget-forecast-background;
+
+  &__list {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__day {
+    font-weight: bold;
+  }
+
+  &__temperature {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+}
+
+@include respond-to(xs) {
+  .widget-forecast {
+    width: auto;
+    height: auto;
+    &__item {
+      margin: 15px 0;
+      border-bottom: 1px solid $widget-forecast-color;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__icon {
+      width: 80%;
+    }
+  }
+}

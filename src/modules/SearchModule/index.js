@@ -1,0 +1,1 @@
+export {SearcherModule} from './SearchModule';
