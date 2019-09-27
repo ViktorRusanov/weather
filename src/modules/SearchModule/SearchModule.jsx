@@ -27,8 +27,7 @@ class SearcherModuleContainer extends Component {
         const preparedCoordinates = (pos) => {
             const crd = pos.coords;
             const {latitude, longitude} = crd;
-            console.log({lat: latitude, lon: longitude});
-            debugger
+            alert({lat: latitude, lon: longitude});
             this.props.getWeatherByCoordinates({lat: latitude, lon: longitude});
             this.props.getForecastByCoordinates({lat: latitude, lon: longitude});
         };

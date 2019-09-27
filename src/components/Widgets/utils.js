@@ -1,8 +1,8 @@
 export const preparedList = (list) => {
     const getDate = (date) => new Date(date).getDate();
-    const mapByDay = list.reduce((acc, item) => {
+
+    return list.reduce((acc, item) => {
         const date = getDate(item.dt_txt);
-        debugger
         if (date in acc) {
             acc[date].push(item);
         } else {
@@ -10,7 +10,6 @@ export const preparedList = (list) => {
         }
         return acc;
     }, {});
-    return mapByDay
 };
 
 export const getMiddleValues = (mapedList) => {

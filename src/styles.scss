@@ -1,3 +1,5 @@
+@import '~styles';
+
 body {
     font-family: 'Open Sans', Arial, sans-serif;
 }
@@ -9,3 +11,8 @@ body {
     width: 90%;
 }
 
+@include respond-to(xs) {
+    .container {
+        width: 100%;
+    }
+}

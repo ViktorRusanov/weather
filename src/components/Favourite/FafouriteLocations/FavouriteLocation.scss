@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  color: $favourites-color;
   padding: 20px;
 
   &__header {
@@ -11,7 +12,8 @@
   }
 
   &__button {
-    background-color: $bg-button-color;
+    font-size: medium;
+    background-color: $favourites-button-color;
     box-sizing: border-box;
     border: none;
     color: $button-color;
@@ -20,10 +22,10 @@
     cursor: pointer;
     width: 200px;
     height: 50px;
-  }
 
-  &--hover:hover {
-    background-color: $bg-button-color-hover;
+    &--hover:hover {
+      background-color: $favourites-button-color-hover;
+    }
   }
 }
 

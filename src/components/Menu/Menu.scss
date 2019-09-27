@@ -1,0 +1,17 @@
+@import 'styles';
+
+.menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+  color: $header-color;
+  background-color: $bg-menu;
+}

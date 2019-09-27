@@ -2,15 +2,21 @@ import React from 'react';
 import {SearcherModule} from 'modules/SearchModule';
 import {WidgetModule} from 'modules/WidgetModule';
 import {FavouriteModule} from 'modules/FavouriteModule';
-import './style.css';
+import {Menu} from 'components/Menu';
+import {Footer} from 'components/Footer';
+import './styles.scss';
 
 function App() {
     return (
-        <div className="container">
-            <SearcherModule/>
-            <WidgetModule />
-            <FavouriteModule />
-        </div>
+        <React.Fragment>
+            <Menu/>
+            <div className="container">
+                <SearcherModule/>
+                <WidgetModule/>
+                <FavouriteModule/>
+                <Footer />
+            </div>
+        </React.Fragment>
     );
 }
 
