@@ -38,5 +38,5 @@ export function FavouriteLocations(props) {
 FavouriteLocations.propTypes = {
     favouriteList: PropTypes.array.isRequired,
     getWeatherByNameRequest: PropTypes.func,
-    clearFavourites: PropTypes.string.isRequired
+    clearFavourites: PropTypes.func.isRequired
 };
