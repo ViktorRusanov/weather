@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {ForecastItem} from './ForecastItem';
-import {getMiddleValues, preparedList} from './utils';
+import {getMiddleValues, preparedList} from '../utils';
 import './ForecastWidget.scss';
 
 export function ForecastWidget(props) {

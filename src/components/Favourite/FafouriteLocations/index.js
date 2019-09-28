@@ -1,0 +1,1 @@
+export {FavouriteLocations} from './FavouriteLocations';

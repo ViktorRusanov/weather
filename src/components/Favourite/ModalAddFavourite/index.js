@@ -1,0 +1,1 @@
+export {ModalAddFavourite} from './ModalAddFavourite';
