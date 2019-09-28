@@ -24,7 +24,7 @@ export class Searcher extends Component {
         const {searchLocation} = this.props;
         return (
             <form className="search-form" onSubmit={this.onSubmit}>
-                <input className="search-form__input" placeholder="City" type="search"
+                <input className="search-form__input" placeholder="Enter city" type="search"
                        onChange={this.handleChange} value={searchLocation}/>
                 <button className="search-form__submit search-form__submit--hover" type="submit">
                     <i className="fa fa-search" />

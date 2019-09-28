@@ -1,4 +1,4 @@
-@import 'style';
+@import 'styles';
 
 .favorite-form {
   display: flex;
@@ -39,11 +39,12 @@
 @include respond-to(xs) {
   .favorite-form {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
+    width: 300px;
     height: auto;
 
     &__button {
-      width: 250px;
+      width: 50px;
       margin: 10px 0 20px 0;
     }
   }
