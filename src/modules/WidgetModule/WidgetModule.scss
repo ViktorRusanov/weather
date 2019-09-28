@@ -25,3 +25,13 @@
         width: 100%;
     }
 }
+
+@include respond-to(sm) {
+    .row-widget {
+        flex-direction: column;
+        height: auto;
+    }
+    .column-widget {
+        width: 100%;
+    }
+}

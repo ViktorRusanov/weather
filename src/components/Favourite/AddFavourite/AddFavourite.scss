@@ -65,3 +65,15 @@
     }
   }
 }
+
+@include respond-to(sm) {
+  .favorite-form-info {
+    &__header {
+      font-size: large;
+    }
+
+    &__text {
+      font-size: medium;
+    }
+  }
+}

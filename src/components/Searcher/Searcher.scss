@@ -28,9 +28,21 @@
       background-color: $bg-button-color-hover;
     }
   }
-  @include respond-to(xs) {
+}
+
+@include respond-to(xs) {
+  .search-form {
     &__input {
       width: 250px;
+      height: 50px;
+    }
+  }
+}
+
+@include respond-to(sm) {
+  .search-form {
+    &__input {
+      width: 270px;
       height: 50px;
     }
   }

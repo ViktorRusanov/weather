@@ -1,54 +1,56 @@
 @import 'styles';
 
 .widget-weather {
-    width: 600px;
-    height: 300px;
-    color: $widget-weather-color;
-    background: $widget-weather-background;
+  width: 600px;
+  height: 300px;
+  color: $widget-weather-color;
+  background: $widget-weather-background;
 
-    &__table {
-        width: 100%;
-    }
+  &__table {
+    width: 100%;
+  }
 
-    &__city-name {
-        font: 30px/30px 'Open Sans', Arial, sans-serif;
-        font-weight: bold;
-        text-align: center;
-    }
+  &__city-name {
+    font: 30px/30px 'Open Sans', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
 
-    &__temperature {
-        font-size: xx-large;
-        font-weight: bold;
-    }
+  &__temperature {
+    font-size: xx-large;
+    font-weight: bold;
+  }
 
-    &__general-info {
-        font-size: large;
-        text-align: left;
-    }
-    &__main {
-        text-align: center;
-    }
+  &__general-info {
+    font-size: large;
+    text-align: left;
+  }
+
+  &__main {
+    text-align: center;
+  }
 }
 
 @include respond-to(xs) {
-    .widget-weather {
-        .widget-weather__cell {
-            padding-right: 10px;
-        }
-        &__city-name {
-            font-size: large;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        &__temperature {
-            font-size: medium;
-            font-weight: normal;
-        }
-
-        &__general-info {
-            font-size: medium;
-            text-align: left;
-        }
+  .widget-weather {
+    .widget-weather__cell {
+      padding-right: 10px;
     }
+
+    &__city-name {
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &__temperature {
+      font-size: medium;
+      font-weight: normal;
+    }
+
+    &__general-info {
+      font-size: medium;
+      text-align: left;
+    }
+  }
 }
