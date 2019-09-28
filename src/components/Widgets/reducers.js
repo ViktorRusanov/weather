@@ -6,8 +6,8 @@ const initialState = {};
 export const forecastReducer = handleAction(
     setForecast,
     (state, action) => action.payload,
-    initialState
-);
+    initialState);
+
 export const weatherReducer = handleActions({
     [setWeather]: (state, action) => action.payload
 }, {});

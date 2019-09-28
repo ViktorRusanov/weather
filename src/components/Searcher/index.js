@@ -1,4 +1,5 @@
 export {Searcher} from './Searcher';
+export {SearchError} from './SearchError';
 export {getSearchLocation} from './selectors';
 export {searcherReducer} from './reducers';
 export {setSearchLocation} from './actions';

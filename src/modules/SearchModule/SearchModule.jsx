@@ -1,14 +1,15 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {
     Searcher,
+    SearchError,
     getWeatherByCoordinates,
     getSearchLocation,
     getWeatherByName,
     setSearchLocation
 } from 'components/Searcher';
-import {AddFavourite, ModalAddFavourite, addFavouriteLocation} from 'components/Favourite';
-import {getForecastByName, getForecastByCoordinates} from 'components/Widgets';
+import {AddFavourite, ModalAddFavourite, addFavouritesLocation} from 'components/Favourite';
+import {getForecastByName, getForecastByCoordinates, selectLoadError} from 'components/Widgets';
 import './SearchModule.scss';
 
 class SearcherModuleContainer extends Component {
@@ -24,14 +25,26 @@ class SearcherModuleContainer extends Component {
     };
 
     componentDidMount() {
+        const {
+            getWeatherByCoordinates,
+            getForecastByCoordinates,
+            getWeatherByName,
+            getForecastByName
+        } = this.props;
         const preparedCoordinates = (pos) => {
             const crd = pos.coords;
             const {latitude, longitude} = crd;
-            alert({lat: latitude, lon: longitude});
-            this.props.getWeatherByCoordinates({lat: latitude, lon: longitude});
-            this.props.getForecastByCoordinates({lat: latitude, lon: longitude});
+            getWeatherByCoordinates({lat: latitude, lon: longitude});
+            getForecastByCoordinates({lat: latitude, lon: longitude});
         };
-        navigator.geolocation.getCurrentPosition(preparedCoordinates);
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(preparedCoordinates);
+        } else {
+            const defaultLocation = 'London';
+            getWeatherByName(defaultLocation);
+            getForecastByName(defaultLocation);
+        }
+
     }
 
     render() {
@@ -41,39 +54,44 @@ class SearcherModuleContainer extends Component {
             setSearchLocation,
             getWeatherByName,
             addFavoriteLocation,
-            getForecastByName
+            getForecastByName,
+            error
         } = this.props;
 
         return (
-            <div className="row-search">
-                <div className="column-search">
-                    <Searcher
-                        searchLocation={searchLocation}
-                        getWeatherByName={getWeatherByName}
-                        setSearchLocation={setSearchLocation}
-                        getForecastByName={getForecastByName}
+            <Fragment>
+                <div className="row-search">
+                    <div className="column-search">
+                        <Searcher
+                            searchLocation={searchLocation}
+                            getWeatherByName={getWeatherByName}
+                            setSearchLocation={setSearchLocation}
+                            getForecastByName={getForecastByName}
+                        />
+                    </div>
+                    <div className="column-favourite">
+                        <AddFavourite toggleModal={this.toggleModal}/>
+                    </div>
+                    <ModalAddFavourite
+                        isShowModal={isShowModal}
+                        toggleModal={this.toggleModal}
+                        addFavoriteLocation={addFavoriteLocation}
                     />
                 </div>
-                <div className="column-favourite">
-                    <AddFavourite toggleModal={this.toggleModal} />
-                </div>
-                <ModalAddFavourite
-                    isShowModal={isShowModal}
-                    toggleModal={this.toggleModal}
-                    addFavoriteLocation={addFavoriteLocation}
-                />
-            </div>
+                <SearchError searchLocation={searchLocation} error={error}/>
+            </Fragment>
         );
     }
 }
 
 export const SearcherModule = connect(state => ({
     searchLocation: getSearchLocation(state),
+    error: selectLoadError(state)
 }), {
     getWeatherByCoordinates,
     getForecastByCoordinates,
     getWeatherByName,
     getForecastByName,
     setSearchLocation,
-    addFavoriteLocation: addFavouriteLocation
+    addFavoriteLocation: addFavouritesLocation
 })(SearcherModuleContainer);

@@ -1,9 +1,9 @@
 import {handleActions} from 'redux-actions';
-import {addFavouriteLocation, clearFavourites} from './actions';
+import {addFavouritesLocation, clearFavourites} from './actions';
 
-export const initialState = ['Москва', 'краснодар'];
+export const initialState = [];
 
-export const favouriteReducer = handleActions({
-    [addFavouriteLocation]: (state, action) => ([...new Set([...state, action.payload])]),
+export const favouritesReducer = handleActions({
+    [addFavouritesLocation]: (state, action) => ([...new Set([...state, action.payload])]),
     [clearFavourites]: () => initialState
 }, initialState);

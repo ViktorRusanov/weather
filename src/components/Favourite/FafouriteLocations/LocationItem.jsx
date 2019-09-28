@@ -24,10 +24,10 @@ export class LocationItem extends Component {
 
     render() {
         const {name, main = {}, wind = {}, weather = [{}]} = this.state.weather;
-        console.log(this.state.weather);
         const {temp = '', pressure} = main;
         const {speed} = wind;
         const [{description, icon}] = weather;
+
         return (
             <li className="list-cities__item">
                 <h4 className="list-cities__location-name">{name}</h4>
